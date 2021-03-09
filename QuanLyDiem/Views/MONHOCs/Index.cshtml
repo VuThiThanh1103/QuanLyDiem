@@ -1,0 +1,48 @@
+﻿@model IEnumerable<QuanLyDiem.Models.MONHOC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Môn Học</h2>
+
+<p>
+    @Html.ActionLink("Tạo Mới Dữ Liệu", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Mã Môn Học</label>
+        </th>
+        <th>
+            <label>Tên Môn Học</label>
+        </th>
+        <th>
+            <label>Sĩ Số</label>
+        </th>
+        <th>
+            <label>Thao Tác</label>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaMon)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenMonHoc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SiSo)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaMon }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaMon }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaMon })
+    </td>
+</tr>
+}
+
+</table>

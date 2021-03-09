@@ -1,0 +1,48 @@
+﻿@model QuanLyDiem.Models.MONHOC
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa Dữ Liệu</h2>
+
+<h3>Bạn Có Chắc Muốn Xóa Không?</h3>
+<div>
+    <h4>MONHOC</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMonHoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMonHoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiSo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiSo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

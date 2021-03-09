@@ -1,0 +1,54 @@
+﻿@model IEnumerable<QuanLyDiem.Models.LOP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lớp</h2>
+
+<p>
+    @Html.ActionLink("Tạo Mới Dữ liệu", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Lớp</label>
+        </th>
+        <th>
+            <label>Khối</label>
+        </th>
+        <th>
+            <label>Mã Giáo Viên</label>
+        </th>
+        <th>
+            <label>Sĩ Số</label>
+        </th>
+        <th>
+            <label>Thao tác</label>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lop)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Khoi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaGV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SiSo)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Lop }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Lop }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Lop })
+    </td>
+</tr>
+}
+
+</table>
